@@ -26,7 +26,34 @@
 
 <?php
 
-print "  <p class=\"aviso\">Ejercicio incompleto</p>\n";
+// Crear array con 10 bits
+$arrayBits = [];
+for($i = 0; $i < 10; $i++) {
+  $arrayBits[$i] = rand(0,1);
+}
+
+// Mostrar la matriz con los bits aleatorios
+echo "  <pre style=\"font-size: 300%;\">\n";
+echo "B: ";
+foreach ($arrayBits as $bit){
+  echo "$bit ";
+}
+echo "\n";
+
+// Crear array con el código de gray
+$arrayCodeGray = [];
+$arrayCodeGray[0] = $arrayBits[0];
+for($i = 1; $i < 10; $i++) {
+  $arrayCodeGray[$i] = $arrayBits[$i] == $arrayBits[$i - 1] ? 0 : 1;
+}
+
+// Mostrar la matriz con los bits aleatorios
+echo "G: ";
+foreach ($arrayCodeGray as $bit){
+  echo "$bit ";
+}
+
+echo "</pre>\n";
 
 ?>
 

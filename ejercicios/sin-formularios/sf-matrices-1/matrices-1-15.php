@@ -26,7 +26,41 @@
 
 <?php
 
-print "  <p class=\"aviso\">Ejercicio incompleto</p>\n";
+// Crear array con 10 bits
+$arrayFirstBits = [];
+$arraySecondBits = [];
+for($i = 0; $i < 10; $i++) {
+  $arrayFirstBits[$i] = rand(0,1);
+  $arraySecondBits[$i] = rand(0,1);
+}
+
+// Mostrar la matriz con los bits aleatorios
+echo "  <pre style=\"font-size: 300%;\">\n";
+echo "A: ";
+foreach ($arrayFirstBits as $bit){
+  echo "$bit ";
+}
+echo "\n";
+
+echo "B: ";
+foreach ($arraySecondBits as $bit){
+  echo "$bit ";
+}
+echo "\n";
+
+// Crear array con la conjunción lógica
+$arrayWithLogic = [];
+for($i = 0; $i < 10; $i++) {
+  $arrayWithLogic[$i] = (int) ($arrayFirstBits[$i] && $arraySecondBits[$i]);
+}
+
+// Mostrar la matriz con los bits aleatorios
+echo "A and B: ";
+foreach ($arrayWithLogic as $bit){
+  echo "$bit ";
+}
+
+echo "</pre>\n";
 
 ?>
 

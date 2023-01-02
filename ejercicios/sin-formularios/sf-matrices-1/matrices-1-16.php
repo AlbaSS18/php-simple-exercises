@@ -26,7 +26,48 @@
 
 <?php
 
-print "  <p class=\"aviso\">Ejercicio incompleto</p>\n";
+// Crear arrays con 10 bits
+$arrayFirstBits = [];
+$arraySecondBits = [];
+$arrayThirdBits = [];
+for($i = 0; $i < 10; $i++) {
+  $arrayFirstBits[$i] = rand(0,1);
+  $arraySecondBits[$i] = rand(0,1);
+  $arrayThirdBits[$i] = rand(0,1);
+}
+
+// Mostrar la matriz con los bits aleatorios
+echo "  <pre style=\"font-size: 300%;\">\n";
+echo "A: ";
+foreach ($arrayFirstBits as $bit){
+  echo "$bit ";
+}
+echo "\n";
+
+echo "B: ";
+foreach ($arraySecondBits as $bit){
+  echo "$bit ";
+}
+echo "\n";
+
+echo "C: ";
+foreach ($arrayThirdBits as $bit){
+  echo "$bit ";
+}
+echo "\n";
+
+// Crear el array con el bit más común
+$arrayCommonBit = [];
+for($i = 0; $i < 10; $i++) {
+  $arrayCommonBit[$i] = $arrayFirstBits[$i] + $arraySecondBits[$i] + $arrayThirdBits[$i] > 1 ? 1 : 0;
+}
+
+// Mostrar el resultado
+echo "R: ";
+foreach ($arrayCommonBit as $bit){
+  echo "$bit ";
+}
+echo "</pre>\n";
 
 ?>
 
